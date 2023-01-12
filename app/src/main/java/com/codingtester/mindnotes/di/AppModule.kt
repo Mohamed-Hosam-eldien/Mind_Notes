@@ -2,13 +2,10 @@ package com.codingtester.mindnotes.di
 
 import android.app.Application
 import androidx.room.Room
-import androidx.room.RoomDatabase
 import com.codingtester.mindnotes.feature_note.data.data_source.NoteDatabase
 import com.codingtester.mindnotes.feature_note.data.repository.NoteRepositoryImpl
 import com.codingtester.mindnotes.feature_note.domain.repository.NoteRepository
-import com.codingtester.mindnotes.feature_note.domain.use_case.DeleteNote
-import com.codingtester.mindnotes.feature_note.domain.use_case.GetNotes
-import com.codingtester.mindnotes.feature_note.domain.use_case.NoteUseCases
+import com.codingtester.mindnotes.feature_note.domain.use_case.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,7 +18,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideDatabase(app: Application): RoomDatabase {
+    fun provideDatabase(app: Application): NoteDatabase {
         return Room.databaseBuilder(
             app,
             NoteDatabase::class.java,
@@ -44,7 +41,9 @@ object AppModule {
     ): NoteUseCases {
         return NoteUseCases(
             getNotes = GetNotes(noteRepository),
-            deleteNote = DeleteNote(noteRepository)
+            deleteNote = DeleteNote(noteRepository),
+            addNote = AddNote(noteRepository),
+            getNote = GetNote(noteRepository)
         )
     }
 
