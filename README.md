@@ -6,7 +6,7 @@ A “Mind Notes” is an android app that allows you to create your own notes an
 
 # 𝑻𝒐𝒐𝒍𝒔
 - **Kotlin**
-- **Coroutines With Flows**
+- **Coroutines with Flows**
 - **Jetpack Compose**
 - **Hilt**
 - **Room Database**
