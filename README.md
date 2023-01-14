@@ -11,7 +11,6 @@ A “Mind Notes” is an android app that allows you to create your own notes an
 - **Hilt**
 - **Room Database**
 - **Clean Architecture**
-- **Modules**
 # Architecture 
 This app uses **MVVM (Model View View-Model)** architecture.
 ![Q3NBc](https://user-images.githubusercontent.com/62480395/159254664-fee91587-2a62-4858-a8f4-4ab41e6a7c6e.png)
